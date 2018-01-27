@@ -8,7 +8,7 @@
                   |___/                               
         The Slack bot that brings your team together!
 
-HighFive is a recognition system for Slack. Your team members reward each others and win gifts.
+HighFive is a recognition system for Slack. Your team members reward each other and win gifts.
 
 **Born and bread in Texas**
 
@@ -140,7 +140,7 @@ export HighFiveBotToken=xoxb-12345678-azertyuiopQSDFGHJKLM
 case "$1" in
   start)
   # change --sourceDir to set the path where you install highfivebot
-  exec forever --uid="highfivebot" --sourceDir=/home/fermier/highfivebot -p /var/run/fermier.pid highfivebot.js 2>&1 > /dev/null &
+  exec forever --uid="highfivebot" --sourceDir=/home/mike/highfivebot -p /var/run/mike.pid highfivebot.js 2>&1 > /dev/null &
   ;;
 stop)
   exec forever stop highfivebot 2>&1 > /dev/null
