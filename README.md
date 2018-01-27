@@ -140,7 +140,7 @@ export HighFiveBotToken=xoxb-12345678-azertyuiopQSDFGHJKLM
 case "$1" in
   start)
   # change --sourceDir to set the path where you install highfivebot
-  exec forever --uid="dairybot" --sourceDir=/home/fermier/highfivebot -p /var/run/fermier.pid highfivebot.js 2>&1 > /dev/null &
+  exec forever --uid="highfivebot" --sourceDir=/home/fermier/highfivebot -p /var/run/fermier.pid highfivebot.js 2>&1 > /dev/null &
   ;;
 stop)
   exec forever stop highfivebot 2>&1 > /dev/null
