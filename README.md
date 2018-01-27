@@ -46,27 +46,21 @@ You can configure all the gifts you want in HighFive, some ideas:
 ##Install
 ###Clone git repo
 ```
-git clone https://github.com/omartineau/dairybot
+git clone https://github.com/helloroughton/highfive
 ```
 ###Install modules
 
-Install all the libraries needed by node and Dairybot.
+Install all the libraries needed by node and HighFivebot.
 
 ```
 npm install
 ```
 
-### An easier way to install
+###Configure your bot and get your token
 
-- [Deployment on Clever Cloud](docs/hosting/clevercloud.md)
+[In Slack, create a bot](https://slack.com/apps/build/custom-integration) named `highfive` and copy the API token.
 
-Soon... Other Paas platforms.
-
-###Configure you bot and get you token
-
-[In Slack, create a bot](https://slack.com/apps/build/custom-integration) named `dairy` and copy the API token.
-
-**Invite dairy in each channel** needed to be monitored by your bot. You also need to create a private chanel `dairyadmin` and invite your bot inside with `/invite dairy`.
+**Invite fighfive in each channel** needed to be monitored by your bot. You also need to create a private chanel `highfiveadmin` and invite your bot inside with `/invite highfive`.
 
 If you want to make reward easier, [create a alias](https://slack.com/customize/emoji) `:thanks:` for the one you use `:hatching_chick:` by default (:hatching_chick:)
 
@@ -74,7 +68,7 @@ If you want to make reward easier, [create a alias](https://slack.com/customize/
 
 ### Config file
 
-Duplicate the `config/dairybot.json` file, then launch your bot with the environnement `DairyBotConfig=new_conf_file.json` .
+Duplicate the `config/highfivebot.json` file, then launch your bot with the environnement `HighFiveBotConfig=new_conf_file.json` .
 
 ### Common section
 
@@ -82,7 +76,7 @@ Duplicate the `config/dairybot.json` file, then launch your bot with the environ
 - **botTZ** : Time Zone of the Bot (currently unused)
 - **cronHourUTC** and **cronMinuteUTC** : time of the reward delivery
 - **giftHeardEmoji**  : emoji added in reaction, when a reward is noticed by the bot ( :robot_face: )
-- **adminChanel** : private channel use to notify admin when a use get his gift (*dairyadmin* by default)
+- **adminChanel** : private channel use to notify admin when a use get his gift (*highfiveadmin* by default)
 - **adminUser** : list of admin users (currently unused)
 - **excludedUser** : list of users that will not take part of the system
 - **excludedChannel** : list of channels where the bot can not be invited
@@ -113,46 +107,46 @@ Lists the gift that can be obtain in exchange of rewards :hatched_chick:
 
 ##Launch
 ###Test
-DairyBotToken=xoxp-123456-789012-??????-?????? node dairybot.js
+HighFiveBotToken=xoxp-123456-789012-??????-?????? node highfivebot.js
 ###Install as a daemon
-Ìnstall [forever](https://www.npmjs.com/package/forever) to make DairyBot persistent.
+Ìnstall [forever](https://www.npmjs.com/package/forever) to make HighFiveBot persistent.
 ```
 [sudo] npm install forever -g
 ```
-Create `/etc/init.d/dairybot`.
-Change the **DairyBotToken** and the **sourceDir**
+Create `/etc/init.d/highfivebot`.
+Change the **HighFiveBotToken** and the **sourceDir**
 
 ```
 #!/bin/sh
 ### BEGIN INIT INFO
-# Provides:             dairybot
+# Provides:             highfivebot
 # Required-Start:       $syslog $remote_fs
 # Required-Stop:        $syslog $remote_fs
 # Should-Start:         $local_fs
 # Should-Stop:          $local_fs
 # Default-Start:        2 3 4 5
 # Default-Stop:         0 1 6
-# Short-Description:    Dairy Bot
-# Description:          The ChatBot that makes your team happy
+# Short-Description:    HighFive Bot
+# Description:          The Slack bot that brings your team together!
 ### END INIT INFO
 
-#/etc/init.d/dairybot
+#/etc/init.d/highfivebot
 
 export PATH=$PATH:/usr/local/bin
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
-# change du token below with yours
-export DairyBotToken=xoxb-12345678-azertyuiopQSDFGHJKLM 
+# change the token below with yours
+export HighFiveBotToken=xoxb-12345678-azertyuiopQSDFGHJKLM 
 
 case "$1" in
   start)
-  # change --sourceDir to set the path where you install dairybot
-  exec forever --uid="dairybot" --sourceDir=/home/fermier/dairybot -p /var/run/fermier.pid dairybot.js 2>&1 > /dev/null &
+  # change --sourceDir to set the path where you install highfivebot
+  exec forever --uid="dairybot" --sourceDir=/home/fermier/highfivebot -p /var/run/fermier.pid highfivebot.js 2>&1 > /dev/null &
   ;;
 stop)
-  exec forever stop dairybot 2>&1 > /dev/null
+  exec forever stop highfivebot 2>&1 > /dev/null
   ;;
 *)
-  echo "Usage: /etc/init.d/dairybot {start|stop}"
+  echo "Usage: /etc/init.d/highfivebot {start|stop}"
   exit 1
   ;;
 esac
@@ -162,7 +156,7 @@ exit 0
 
 Launch the daemon
 ```
-/etc/init.d/dairybot start
+/etc/init.d/highfivebot start
 ```
 
 
@@ -170,30 +164,20 @@ Launch the daemon
 
 You can restart the daemon in command line to reload the configuration
 ```
-/etc/init.d/dairybot stop
-/etc/init.d/dairybot start
+/etc/init.d/highfivebot stop
+/etc/init.d/highfivebot start
 ```
 
 Or DM your bot in Slack, and say `restart` and confirm `yes`
 
 ## FAQ
 
-### Dairybot didn't see some rewards
+### HighFive Bot didn't see some rewards
 
-The bot need to be invited in each channal public ou private. You can also check if the bot is launched (the green bullet)
+The bot need to be invited in each channel public or private. You can also check if the bot is launched (the green bullet)
 
 The bot can not see if you try to give reward through a direct message, Slack didn't allow it.
 
+###Library
 
-
-## How to contributes
-
-You can help correcting typos, or complete the documentation, or even create new language (json file in /config).
-
-I also want to create guides for easy installation on Paas ([Heroku](https://blog.heroku.com/how-to-deploy-your-slack-bots-to-heroku), [Google cloud platform](https://cloudplatform.googleblog.com/2016/03/three-ways-to-build-Slack-integrations-on-Google-Cloud-Platform.html), IBM [BlueMix](https://developer.ibm.com/bluemix/2016/06/06/slack-bots-built-using-node-red/), [Azure](https://azure.microsoft.com/en-us/blog/using-the-azure-webjobs-sdk-to-create-custom-slack-extensions/), [AWS](https://aws.amazon.com/fr/lambda/), [Clever Cloud](https://www.clever-cloud.com/doc/nodejs/nodejs/), DigitalOcean, Gandi...)
-
-You can help to impove the code, of course. I'm new to NodeJS, it's realy a side project for me and I didn't plan to be a Node expert ;-). Pull request are welcome !
-
-###Librairy
-
-DairyBot is based on the Botkit library https://howdy.ai/botkit/
+HighFiveBot is based on the Botkit library https://howdy.ai/botkit/
