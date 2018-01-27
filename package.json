@@ -1,0 +1,31 @@
+{
+  "name": "highfivebot",
+  "description": "The Slack bot that brings your team together!",
+  "author": "Mike Roughton <michaelroughton@gmail.com>",
+  "main": "highfivebot.js",
+  "kaywords": [
+    "bot",
+    "slack",
+    "chatbots"
+  ],
+  "dependencies": {
+    "botkit": "*",
+    "express": "^4.13.3",
+    "body-parser": "^1.13.3",
+    "express-handlebars": "^3.0.0"
+  },
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "node highfivebot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://highfive.rastrac.net"
+  },
+  "bugs": {
+    "url": "https://highfive.rastrac.net/issues"
+  },
+  "homepage": "http://highfive.rastrac.net"
+
+}
