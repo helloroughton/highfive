@@ -14,19 +14,19 @@ HighFive is a recognition system for Slack. Your team members reward each other 
 
 ## How it all works
 
-​Every day, each team member receives five :highfive: that can be used to reward a fellow colleague. Send recognition in a channel (public or private).
+​Every day, each team member receives five :hand: that can be used to reward a fellow colleague. Send recognition in a channel (public or private).
 
-> ​A big thanks :highfive: to @mike for completing the merger!
+> ​A big thanks :hand: to @mike for completing the merger!
 
 Mike will receive a direct message from the bot informing him of the recognition.
 
-> @larry gave you a :highfive:
+> @larry gave you a :hand:
 
 And the sender will receive a confirmation
 
-> You gave a :highfive: to @mike
+> You gave a :hand: to @mike
 
-When you have enough :highfive:s, you can exchange them for gifts.
+When you have enough :hand:s, you can exchange them for gifts.
 
 You can configure all the gifts you want in HighFive, some ideas:
 
