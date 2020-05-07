@@ -1,6 +1,6 @@
-		_   _  _         _     ______  _              
-	   | | | |(_)       | |    |  ___|(_)             
-	   | |_| | _   __ _ | |__  | |_    _ __   __  ___ 
+        _   _  _         _      _____  _              
+       | | | |(_)       | |    |  ___|(_)             
+       | |_| | _   __ _ | |__  | |_    _ __   __  ___ 
        |  _  || | / _` || '_ \ |  _|  | |\ \ / / / _ \
        | | | || || (_| || | | || |    | | \ V / |  __/
        \_| |_/|_| \__, ||_| |_|\_|    |_|  \_/   \___|
@@ -36,12 +36,12 @@ You can configure all the gifts you want in HighFive, some ideas:
 
 ### Rules
 
-- You can give several rewards (​:hatching_chick:​ ​:hatching_chick:​to @john)
-- ​You can give reward to several people (​:hatching_chick:​ to @john and @jim)
+- You can give several rewards (​:hand:​ ​:hand:​to @john)
+- ​You can give reward to several people (​:hand:​ to @john and @jim)
 - You can not give reward you you dont have !
-- ​You can accumulate :hatching_chick: (but a maximum is set)
+- ​You can accumulate :hand: (but a maximum is set)
 - You can not give reward you received (:hatched_chick:)
-- ​You can not give :hatching_chick: in a direct message.
+- ​You can not give :hand: in a direct message.
 
 ##Install
 ###Clone git repo
@@ -62,7 +62,7 @@ npm install
 
 **Invite fighfive in each channel** needed to be monitored by your bot. You also need to create a private chanel `highfiveadmin` and invite your bot inside with `/invite highfive`.
 
-If you want to make reward easier, [create a alias](https://slack.com/customize/emoji) `:thanks:` for the one you use `:hatching_chick:` by default (:hatching_chick:)
+If you want to make reward easier, [create a alias](https://slack.com/customize/emoji) `:thanks:` for the one you use `:hand:` by default (:hand:)
 
 ## Personalize you Bot
 
@@ -90,13 +90,13 @@ Duplicate the `config/highfivebot.json` file, then launch your bot with the envi
 - **recognitionByDay** : how many rewards are received each day (default : 1)
 - **recognitionMax** : how many rewards can be cumulated (default 3)
 - **excludedDays** : rewards are not given on those days (0 is sunday) (default weekend [6,0])
-- **giftEmoji** : emoji used to give recognition (default 🐣)
+- **giftEmoji** : emoji used to give recognition (default :hand:)
 - **giftEmojiAlias** : alias to make easy recognition (default `:thanks:` )
-- **rewardEmoji** : emoji used to represent rewards (default :hatched_chick:)
+- **rewardEmoji** : emoji used to represent rewards (default :hand:)
 
 ### RewardRL section
 
-Lists the gift that can be obtain in exchange of rewards :hatched_chick:
+Lists the gift that can be obtain in exchange of rewards :hand:
 
 - **cost** : nomber of rewards required
 - **desc** : gift description
