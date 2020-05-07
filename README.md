@@ -36,12 +36,12 @@ You can configure all the gifts you want in HighFive, some ideas:
 
 ### Rules
 
-- You can give several rewards (​:hand:​ ​:hand:​to @john)
-- ​You can give reward to several people (​:hand:​ to @john and @jim)
-- You can not give reward you you dont have !
-- ​You can accumulate :hand: (but a maximum is set)
-- You can not give reward you received (:hatched_chick:)
-- ​You can not give :hand: in a direct message.
+- You can give several rewards at once (​:hand:​ ​:hand:​to @john)
+- You can give a reward to several people at a time (​:hand:​ to @john and @jim)
+- You can not give more than 5 :hand: per day
+- You can accumulate :hand: (but a maximum is set)
+- You can not give a reward you received
+- You can not give :hand: in a direct message. It must be public (no favoritism).
 
 ##Install
 ###Clone git repo
@@ -62,9 +62,9 @@ npm install
 
 **Invite fighfive in each channel** needed to be monitored by your bot. You also need to create a private chanel `highfiveadmin` and invite your bot inside with `/invite highfive`.
 
-If you want to make reward easier, [create a alias](https://slack.com/customize/emoji) `:thanks:` for the one you use `:hand:` by default (:hand:)
+If you want to make rewarding easier, [create a alias](https://slack.com/customize/emoji) `:thanks:` for the one you use `:hand:` by default (:hand:)
 
-## Personalize you Bot
+## Personalize your Bot
 
 ### Config file
 
